@@ -2,6 +2,7 @@
 #define FEATURES_H
 #include <stdio.h>
 
+void dimension (char *source_path);
 
 void helloWorld();
 void dimension (char *source_path);
