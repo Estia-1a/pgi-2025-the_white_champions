@@ -14,6 +14,7 @@ void helloWorld() {
     printf("Hello World !");
 }
 
+
 void dimension(char *source_path) {
     unsigned char *data;
     int width, height, channel_count;
@@ -43,7 +44,7 @@ void second_line (char *source_path) {
     int width, height, channel_count;
 
     read_image_data(source_path, &data, &width, &height, &channel_count);
-    printf("second_line: %d, %d, %d\n", data[0], data[0], data[0]);
+    printf("second_line: %d, %d, %d\n", data[3 * width], data[3 * width + 1], data[3 * width + 2]);
 }
 
 void print_pixel(char *filename, int x, int y) {
