@@ -43,5 +43,5 @@ void second_line (char *source_path) {
     int width, height, channel_count;
 
     read_image_data(source_path, &data, &width, &height, &channel_count);
-    printf("second_line: %d, %d, %d\n", data[30], data[28], data[29]);
+    printf("second_line: %d, %d, %d\n", data[0], data[0], data[0]);
 }
