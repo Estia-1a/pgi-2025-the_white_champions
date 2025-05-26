@@ -12,5 +12,9 @@
  */
 
 void helloWorld() {
-    printf("Hello World !");
+    printf("Hello World ");
+}
+
+void dimension (char *source_path) {
+    printf("dimension: 1488, 1488");
 }
