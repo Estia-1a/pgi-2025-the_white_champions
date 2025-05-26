@@ -51,10 +51,4 @@ void print_pixel(char *filename, int x, int y) {
     unsigned char *data;
     int width, height, n;
     read_image_data(filename, &data, &width, &height, &n);
-    pixelRGB *pixel = get_pixel(data, width, height, n, x, y);
-    if (pixel != NULL) {
-        printf("print_pixel (%d, %d): %d, %d, %d\n", x, y, pixel->R, pixel->G, pixel->B);
-    } else {
-        printf("Pixel out of range\n");
-    }
 }
