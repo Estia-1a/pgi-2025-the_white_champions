@@ -52,3 +52,22 @@ void print_pixel(char *filename, int x, int y) {
     int width, height, n;
     read_image_data(filename, &data, &width, &height, &n);
 }
+
+void rotate_cw(char *filename, int x, int y) {
+    read_image_data(filename, &data, &width, &height, &n);
+    unsigned char *data;
+    int width, heigt, zPixel;
+    unsigned char *rotate_pic = malloc(zpixel)
+    if (!rotate_pic) {
+        printf("Problème de stockage mémoire");
+    }
+       for (int y = 0; y < height; y++) {
+        for (int x = 0; x < width; x++) {
+            for (int z = 0; z < zPixel; z++) {
+                image_out_bmp[(x * height + (height - 1 - y)) * zPixel + z] =
+                    data[(y * width + x) * zPixel + z];
+            }
+        }
+    }
+    return image_out_bmp
+}
