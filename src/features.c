@@ -87,3 +87,4 @@ void rotate_acw(char*filename, int x, int y, int z) {
     }
     return image_out_bmp;
 }
+
