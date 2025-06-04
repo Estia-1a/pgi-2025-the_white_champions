@@ -53,21 +53,37 @@ void print_pixel(char *filename, int x, int y) {
     read_image_data(filename, &data, &width, &height, &n);
 }
 
-void rotate_cw(char *filename, int x, int y) {
+void rotate_cw(char *filename, int x, int y, int z) {
     read_image_data(filename, &data, &width, &height, &n);
-    unsigned char *data;
     int width, heigt, zPixel;
-    unsigned char *rotate_pic = malloc(zpixel)
+    unsigned char *rotate_pic = malloc(zPixel);
     if (!rotate_pic) {
         printf("Problème de stockage mémoire");
     }
-       for (int y = 0; y < height; y++) {
+    for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
             for (int z = 0; z < zPixel; z++) {
                 image_out_bmp[(x * height + (height - 1 - y)) * zPixel + z] =
-                    data[(y * width + x) * zPixel + z];
+                data[(y * width + x) * zPixel + z];
             }
         }
     }
-    return image_out_bmp
+    return image_out_bmp;
+}
+
+void rotate_acw(char*filename, int x, int y, int z) {
+    read_image_data(filename, &data, &width, &height, &n);
+    unsigned char *rotate_pic = malloc(zPixel);
+    if (!rotate_pic) {
+        printf("Problème de stockage mémoire");
+    }
+    for (int y = 0; y < height; y++) {
+        for (int x = 0; x < width; x++) {
+            for (int z = 0; z < zPixel; z++) {
+                image_out_bmp[(y * width + (width - 1 - x)) * zPixel + z] =
+                data[(y * width + x) * zPixel + z];
+            }
+        }
+    }
+    return image_out_bmp;
 }
