@@ -38,27 +38,30 @@ int main(int argc, char **argv) {
     first_pixel(configuration.filenames[0]);
 }
 
-  if ( strncmp( configuration.command, "tenth_pixel", 11 ) == 0 ) {
+  if ( strncmp( configuration.command, "tenth_pixel", 12 ) == 0 ) {
     tenth_pixel(configuration.filenames[0]);
 }
 
-  if ( strncmp( configuration.command, "second_line", 11 ) == 0 ) {
+  if ( strncmp( configuration.command, "second_line", 13 ) == 0 ) {
     second_line(configuration.filenames[0]);
 }
 
-  if ( strncmp( configuration.command, "color_green", 11) == 0 ) {
+  if ( strncmp( configuration.command, "color_green", 14) == 0 ) {
     color_green(configuration.filenames[0]);
 }
 
 
-  if ( strncmp( configuration.command, "color_blue", 11) == 0 ) {
+  if ( strncmp( configuration.command, "color_blue", 15) == 0 ) {
     color_blue(configuration.filenames[0]);
 }
-  if ( strncmp( configuration.command, "color_gray", 11) == 0 ) {
+  if ( strncmp( configuration.command, "color_gray", 16) == 0 ) {
     color_gray(configuration.filenames[0]);
 }
-  if ( strncmp( configuration.command, "color_gray_luminance", 11) == 0 ) {
+  if ( strncmp( configuration.command, "color_gray_luminance", 17) == 0 ) {
     color_gray_luminance(configuration.filenames[0]);
+}
+  if ( strncmp( configuration.command, "color_invert", 18) == 0 ) {
+    color_invert(configuration.filenames[0]);
 }
   return 0;
 }

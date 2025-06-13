@@ -111,3 +111,16 @@ void color_gray_luminance (char *source_path) {
     write_image_data("image_grise_luminance.bmp", data, width, height);
     printf("color_gray_luminance\n");
 }
+
+void color_invert(char *source_path) {
+    unsigned char *data;
+    int width, height, channel_count;
+
+    read_image_data(source_path, &data, &width, &height, &channel_count);
+
+    for (int i = 0; i < width * height * 3; i ++) {
+        data[i] = 255 - data[i];
+    }
+    write_image_data("image_inversion.bmp", data, width, height);
+    printf("color_invert\n");
+}
