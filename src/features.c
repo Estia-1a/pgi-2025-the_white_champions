@@ -58,5 +58,25 @@ void color_green (char *source_path) {
         data[i*3+2] = 0;
     }
     write_image_data("image_verte.bmp", data, width, height);
-    printf("color_green done\n");
+    printf("color_green\n");
+}
+
+void print_pixel(char *filename, int x, int y) {
+    unsigned char *data;
+    int width, height, n;
+    read_image_data(filename, &data, &width, &height, &n);
+}
+
+void color_blue (char *source_path) {
+    unsigned char *data;
+    int width, height, channel_count;
+
+    read_image_data(source_path, &data, &width, &height, &channel_count);
+
+    for(int i = 0; i < width * height; i++) {
+        data[i*3] = 0;
+        data[i*3+1] = 0;
+    }
+    write_image_data("image_bleu.bmp", data, width, height);
+    printf("color_blue\n");
 }
