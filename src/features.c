@@ -80,3 +80,18 @@ void color_blue (char *source_path) {
     write_image_data("image_bleu.bmp", data, width, height);
     printf("color_blue\n");
 }
+void color_gray (char *source_path) {
+    unsigned char *data;
+    int width, height, channel_count;
+
+    read_image_data(source_path, &data, &width, &height, &channel_count);
+
+    for(int i = 0; i < width * height; i++) {
+        unsigned char gray =(data[i*3] + data[i*3+1] + data[i*3+2]) / 3;
+        data[i*3] = gray;
+        data[i*3+1] = gray;
+        data[i*3+2] = gray;
+    }
+    write_image_data("image_grise.bmp", data, width, height);
+    printf("color_gray\n");
+}

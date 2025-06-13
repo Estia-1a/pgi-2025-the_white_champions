@@ -54,5 +54,8 @@ int main(int argc, char **argv) {
   if ( strncmp( configuration.command, "color_blue", 11) == 0 ) {
     color_blue(configuration.filenames[0]);
 }
+  if ( strncmp( configuration.command, "color_gray", 11) == 0 ) {
+    color_gray(configuration.filenames[0]);
+}
   return 0;
 }
