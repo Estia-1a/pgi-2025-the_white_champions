@@ -87,7 +87,7 @@ void rotate_acw(char*filename, int x, int y, int z) {
 }
 
 void mirror_horizontal(char*filename, int x, int y, int z) {
-    read_image_data(filename, &data, &width, &height);
+    image_out_bmp = read_image_data(filename, &data, &width, &height);
     unsigned char *symetry_pic = malloc(zPixel);
     if(!symetry_pic) {
         printf("Problème de stockge mémoire");
@@ -103,4 +103,25 @@ void mirror_horizontal(char*filename, int x, int y, int z) {
             }
         }
     }
+    return image_out_bmp ;
+}
+
+void mirror_verticale(char*filename, int x, int y, int z) {
+    image_out_bmp = read_image_data(filename, &data, &width, &height);
+    unsigned char *symetry_pic = malloc(zPixel);
+    if(!symetry_pic) {
+        printf("Problème de stockge mémoire");
+    }
+    for(y = 0; y < height; y++) {
+        for(x = 0; x < width / 2; x++) {
+            int haut = ( y * width + x) * zPixel;
+            int bas = ( (height - 1 - y) * width + x) * zPixel; /*Implémentation des pixels demandées*/
+            for( z = 0; z = < zPixel; z++) { /* Ici meme idee que precedemment on realise juste pour le haut et la bas */ 
+                unsigned char stock_donnee = data[bas + z];
+                data[bas + z] = data[haut + z];
+                data[haut + z] = stock_donnee;
+            }
+        }
+    }
+    return image_out_bmp;
 }
