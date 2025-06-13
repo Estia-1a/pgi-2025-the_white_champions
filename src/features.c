@@ -86,12 +86,28 @@ void color_gray (char *source_path) {
 
     read_image_data(source_path, &data, &width, &height, &channel_count);
 
-    for(int i = 0; i < width * height; i++) {
-        unsigned char gray =(data[i*3] + data[i*3+1] + data[i*3+2]) / 3;
-        data[i*3] = gray;
-        data[i*3+1] = gray;
-        data[i*3+2] = gray;
+    for (int i = 0; i < width * height * 3; i += 3) {
+        unsigned char gray = (data[i] + data[i + 1] + data[i + 2]) / 3;
+        data[i] = gray;
+        data[i + 1] = gray;
+        data[i + 2] = gray;
     }
     write_image_data("image_grise.bmp", data, width, height);
     printf("color_gray\n");
+}
+
+void color_gray_luminance (char *source_path) {
+    unsigned char *data;
+    int width, height, channel_count;
+
+    read_image_data(source_path, &data, &width, &height, &channel_count);
+
+    for (int i = 0; i < width * height * 3; i += 3) {
+        unsigned char gray = (0.21 * data[i] + 0.72 * data[i + 1] + 0.07 * data[i + 2]);
+        data[i] = gray;
+        data[i + 1] = gray;
+        data[i + 2] = gray;
+    }
+    write_image_data("image_grise_luminance.bmp", data, width, height);
+    printf("color_gray_luminance\n");
 }
