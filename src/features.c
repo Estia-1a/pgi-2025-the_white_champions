@@ -46,3 +46,17 @@ void second_line (char *source_path) {
     read_image_data(source_path, &data, &width, &height, &channel_count);
     printf("second_line: %d, %d, %d\n", data[3 * width], data[3 * width + 1], data[3 * width + 2]);
 }
+
+void color_green (char *source_path) {
+    unsigned char *data;
+    int width, height, channel_count;
+
+    read_image_data(source_path, &data, &width, &height, &channel_count);
+
+    for(int i = 0; i < width * height; i++) {
+        data[i*3] = 0;
+        data[i*3+2] = 0;
+    }
+    write_image_data("image_verte.bmp", data, width, height);
+    printf("color_green done\n");
+}
