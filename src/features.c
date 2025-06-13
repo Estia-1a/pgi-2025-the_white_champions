@@ -63,8 +63,7 @@ void rotate_cw(char *filename, int x, int y, int z) {
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
             for (int z = 0; z < zPixel; z++) {
-                image_out_bmp[(x * height + (height - 1 - y)) * zPixel + z] =
-                data[(y * width + x) * zPixel + z];
+                image_out_bmp[(x * height + (height - 1 - y)) * zPixel + z] = data[(y * width + x) * zPixel + z];
             }
         }
     }
@@ -72,7 +71,7 @@ void rotate_cw(char *filename, int x, int y, int z) {
 }
 
 void rotate_acw(char*filename, int x, int y, int z) {
-    read_image_data(filename, &data, &width, &height, &n);
+    read_image_data(filename, &data, &width, &height);
     unsigned char *rotate_pic = malloc(zPixel);
     if (!rotate_pic) {
         printf("Problème de stockage mémoire");
@@ -80,11 +79,28 @@ void rotate_acw(char*filename, int x, int y, int z) {
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
             for (int z = 0; z < zPixel; z++) {
-                image_out_bmp[(y * width + (width - 1 - x)) * zPixel + z] =
-                data[(y * width + x) * zPixel + z];
+                image_out_bmp[(y * width + (width - 1 - x)) * zPixel + z] = data[(y * width + x) * zPixel + z]; /*On change juste ici la valeur de roation soit x*/
             }
         }
     }
     return image_out_bmp;
 }
 
+void mirror_horizontal(char*filename, int x, int y, int z) {
+    read_image_data(filename, &data, &width, &height);
+    unsigned char *symetry_pic = malloc(zPixel);
+    if(!symetry_pic) {
+        printf("Problème de stockge mémoire");
+    }
+    for(y = 0; y < height; y++) {
+        for(x = 0; x < width / 2; x++) {
+            int gauche = ( y * width + x) * zPixel;
+            int droite = ( y * width + (width - 1 - x)) * zPixel; /*Implémentation des pixels demandées*/
+            for( z = 0; z = < zPixel; z++) { /* Ici on échange les pixels de place*/
+                unsigned char stock_donnee = data[gauche + z];
+                data[gauche + z] = data[droite + z];
+                data[droite + z] = stock_donnee;
+            }
+        }
+    }
+}
