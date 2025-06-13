@@ -125,3 +125,23 @@ void mirror_verticale(char*filename, int x, int y, int z) {
     }
     return image_out_bmp;
 }
+
+void mirror_totale(char*filename, int x, int y, int z) {
+    image_out_bmp = read_image_data(filename, &data, &width, &height);
+    unsigned char *symetry_pic = malloc(zPixel);
+    if(!symetry_pic) {
+        printf("Problème de stockge mémoire");
+    }
+    for(y = 0; y < height; y++) {
+        for(x = 0; x < width / 2; x++) {
+            int haut_gauche = ( y * width + x) * zPixel;
+            int bas_droite = ( (height - 1 - y) * width + (width - 1 -x)) * zPixel; /*Implémentation des pixels demandées*/
+            for( z = 0; z = < zPixel; z++) { /* Ici meme idee que precedemment on realise juste pour toutes les directions */ 
+                unsigned char stock_donnee = data[haut_gauche + z];
+                data[haut_gauche + z] = data[bas_droite + z];
+                data[bas_droite + z] = stock_donnee;
+            }
+        }
+    }
+    return image_out_bmp;
+}
