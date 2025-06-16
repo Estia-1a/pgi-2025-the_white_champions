@@ -144,4 +144,61 @@ void mirror_totale(char*filename, int x, int y, int z) {
         }
     }
     return image_out_bmp;
+
+void color_blue (char *source_path) {
+    unsigned char *data;
+    int width, height, channel_count;
+
+    read_image_data(source_path, &data, &width, &height, &channel_count);
+
+    for(int i = 0; i < width * height; i++) {
+        data[i*3] = 0;
+        data[i*3+1] = 0;
+    }
+    write_image_data("image_bleu.bmp", data, width, height);
+    printf("color_blue\n");
+}
+void color_gray (char *source_path) {
+    unsigned char *data;
+    int width, height, channel_count;
+
+    read_image_data(source_path, &data, &width, &height, &channel_count);
+
+    for (int i = 0; i < width * height * 3; i += 3) {
+        unsigned char gray = (data[i] + data[i + 1] + data[i + 2]) / 3;
+        data[i] = gray;
+        data[i + 1] = gray;
+        data[i + 2] = gray;
+    }
+    write_image_data("image_grise.bmp", data, width, height);
+    printf("color_gray\n");
+}
+
+void color_gray_luminance (char *source_path) {
+    unsigned char *data;
+    int width, height, channel_count;
+
+    read_image_data(source_path, &data, &width, &height, &channel_count);
+
+    for (int i = 0; i < width * height * 3; i += 3) {
+        unsigned char gray = (0.21 * data[i] + 0.72 * data[i + 1] + 0.07 * data[i + 2]);
+        data[i] = gray;
+        data[i + 1] = gray;
+        data[i + 2] = gray;
+    }
+    write_image_data("image_grise_luminance.bmp", data, width, height);
+    printf("color_gray_luminance\n");
+}
+
+void color_invert(char *source_path) {
+    unsigned char *data;
+    int width, height, channel_count;
+
+    read_image_data(source_path, &data, &width, &height, &channel_count);
+
+    for (int i = 0; i < width * height * 3; i ++) {
+        data[i] = 255 - data[i];
+    }
+    write_image_data("image_inversion.bmp", data, width, height);
+    printf("color_invert\n");
 }
