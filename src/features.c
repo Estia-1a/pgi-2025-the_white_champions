@@ -137,7 +137,7 @@ char* max_pixel(char* source_path){
 	pixelRGB*first_pixel=get_pixel( data , largeur , hauteur , NC , 0 , 0 ) ;
 	int Solmaxi=first_pixel->R+first_pixel->G+first_pixel->B ;
 
-    for(Y=0;Y<hauteur;Y++){
+    for( Y=0 ; Y<hauteur ; Y++ ){
 		
         for( X=0 ; X<largeur ; X++ ){
             pixelRGB*pixel=get_pixel( data , largeur , hauteur , NC , X , Y ) ;
