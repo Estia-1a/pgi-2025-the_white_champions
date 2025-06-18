@@ -124,3 +124,36 @@ void color_invert(char *source_path) {
     write_image_data("image_inversion.bmp", data, width, height);
     printf("color_invert\n");
 }
+
+char* max_pixel(char* source_path){
+    unsigned char* data=NULL ;
+    int hauteur , largeur , NC , X , Y ;
+    int Sol=0 ;
+    int Xmaxi=0 ;
+    int Ymaxi=0 ;
+    
+    read_image_data( source_path , &data , &largeur , &hauteur , &NC ) ;
+    pixelRGB*max_pixel=get_pixel( data , largeur , hauteur , NC , 0 , 0 ) ;
+	pixelRGB*first_pixel=get_pixel( data , largeur , hauteur , NC , 0 , 0 ) ;
+	int Solmaxi=first_pixel->R+first_pixel->G+first_pixel->B ;
+    for(Y=0;Y<hauteur;Y++){
+		
+        for( X=0 ; X<largeur ; X++ ){
+            pixelRGB*pixel=get_pixel( data , largeur , hauteur , NC , X , Y ) ;
+            Sol=pixel->R+pixel->G+pixel->B ;
+			
+            if(Sol>Solmaxi){
+                Solmaxi=Sol; 
+                max_pixel=pixel;
+			    Ymaxi=Y;
+				Xmaxi=X;               
+            }
+        }
+    }
+	
+    printf( "max_pixel ( %d %d ) : %d , %d , %d \n" , Xmaxi , Ymaxi , max_pixel->R , max_pixel->G , max_pixel->B ) ;
+    char* resultat=malloc(100) ;
+    sprintf(resultat , "max_pixel( %d %d ) : %d , %d , %d \n" , Xmaxi , Ymaxi , max_pixel->R , max_pixel->G , max_pixel->B ) ;
+    return resultat ;  
+}
+
