@@ -129,13 +129,14 @@ char* max_pixel(char* source_path){
     unsigned char* data=NULL ;
     int hauteur , largeur , NC , X , Y ;
     int Sol=0 ;
-    int Xmaxi=0 ;
     int Ymaxi=0 ;
+    int Xmaxi=0 ;
     
     read_image_data( source_path , &data , &largeur , &hauteur , &NC ) ;
     pixelRGB*max_pixel=get_pixel( data , largeur , hauteur , NC , 0 , 0 ) ;
 	pixelRGB*first_pixel=get_pixel( data , largeur , hauteur , NC , 0 , 0 ) ;
 	int Solmaxi=first_pixel->R+first_pixel->G+first_pixel->B ;
+
     for(Y=0;Y<hauteur;Y++){
 		
         for( X=0 ; X<largeur ; X++ ){
@@ -157,3 +158,34 @@ char* max_pixel(char* source_path){
     return resultat ;  
 }
 
+char* min_pixel(char* source_path){
+    unsigned char* data=NULL ;
+    int largeur , hauteur , NC , X , Y ;
+    int Sol ;
+    int Ymini=0 ;
+	int Xmini=0 ;
+ 
+    read_image_data( source_path , &data , &largeur , &hauteur , &NC ) ; 
+    pixelRGB*min_pixel=get_pixel( data , largeur , hauteur , NC , 0 , 0 ) ;
+    pixelRGB*first_pixel=get_pixel( data , largeur , hauteur , NC , 0 , 0 ) ;
+    int Solmini=first_pixel->R+first_pixel->G+first_pixel->B ;
+
+    for( Y=0 ; Y<hauteur ; Y++ ){
+		
+        for( X=0 ; X<largeur ; X++ ){
+            pixelRGB*pixel=get_pixel( data , largeur , hauteur , NC , X , Y ) ;
+            Sol=pixel->R+pixel->G+pixel->B ;
+			
+            if(Sol<Solmini){
+                Solmini=Sol ;
+                min_pixel=pixel ;
+                Xmini=X ;
+                Ymini=Y ;
+            }
+        }
+    }
+    printf("min_pixel( %d %d ) : %d , %d , %d \n" , Xmini , Ymini , min_pixel->R , min_pixel->G , min_pixel->B ) ;
+    char* resultat=malloc(100) ;
+    sprintf( resultat ,"min_pixel( %d %d ) : %d , %d , %d \n" , Xmini , Ymini , min_pixel->R , min_pixel->G , min_pixel->B ) ;
+    return resultat ;
+}
