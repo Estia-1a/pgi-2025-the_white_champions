@@ -92,5 +92,21 @@ int main(int argc, char **argv) {
    stat_report(configuration.filenames[0]);  
   }
 
+ 	if ( strncmp( configuration.command, "color_green", 14) == 0 ) {
+  color_green(configuration.filenames[0]);
+}
+
+  if ( strncmp( configuration.command, "color_blue", 15) == 0 ) {
+    color_blue(configuration.filenames[0]);
+}
+  if ( strncmp( configuration.command, "color_gray", 16) == 0 ) {
+    color_gray(configuration.filenames[0]);
+}
+  if ( strncmp( configuration.command, "color_gray_luminance", 17) == 0 ) {
+    color_gray_luminance(configuration.filenames[0]);
+}
+  if ( strncmp( configuration.command, "color_invert", 18) == 0 ) {
+    color_invert(configuration.filenames[0]);
+}
   return 0;
 }
