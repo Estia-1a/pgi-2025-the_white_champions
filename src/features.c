@@ -144,7 +144,7 @@ void mirror_totale(char*filename, int x, int y, int z) {
         }
     }
     return image_out_bmp;
-}
+
 void color_blue (char *source_path) {
     unsigned char *data;
     int width, height, channel_count;
@@ -410,5 +410,13 @@ desaturate_image(){
     my_image_pixels[3].blue = 0;
 
     printf("--- Après désaturation ---\n");
-    for
+    for(int i = 0; i < width * height; i++){
+        printf("Pixel %d: R=%d, G=%d, B=%d\n", i,
+                my_image_pixels[i].red, my_image_pixels[i].green, my_image_pixels[i].blue);
+    }
+
+    free(my_image_pixels);
+    my_image_pixels = NULL;
+
+    return 0;
 }
