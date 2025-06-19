@@ -189,3 +189,43 @@ char* min_pixel(char* source_path){
     sprintf( resultat ,"min_pixel( %d %d ) : %d , %d , %d \n" , Xmini , Ymini , min_pixel->R , min_pixel->G , min_pixel->B ) ;
     return resultat ;
 }
+
+char* max_component(char *source_path,char color_pixel){
+    unsigned char* data=NULL ;
+    int largeur , hauteur , NC , X , Y ;
+    int color_pixel_maxi=0 ;
+    int color_pixel_val=0 ;
+    int Ymaxi=0 ;
+    int Xmaxi=0 ;
+   
+    read_image_data( source_path , &data , &largeur , &hauteur , &NC ) ;
+    for( Y=0 ; Y<hauteur ; Y++ ){
+	
+        for( X=0 ; X<largeur ; X++ ){
+		
+            pixelRGB*pixel=get_pixel( data, largeur , hauteur , NC , X , Y ) ;
+            if (color_pixel=='B'){
+                color_pixel_val=pixel->B ;
+            }
+			
+            else if (color_pixel=='R'){
+                color_pixel_val=pixel->R ;
+            }
+			
+            else if (color_pixel=='G'){
+                color_pixel_val=pixel->G ;
+            }
+			
+            if(color_pixel_val>color_pixel_maxi){
+                color_pixel_maxi=color_pixel_val ;
+                Ymaxi=Y ;
+                Xmaxi=X ;
+            }
+        }
+    }
+	
+    printf("max_component %c ( %d %d ) : %d \n" , color_pixel , Xmaxi , Ymaxi , color_pixel_maxi);
+    char* resultat=malloc(100) ;
+    sprintf( resultat , "max_component %c ( %d %d ) : %d \n" , color_pixel , Xmaxi , Ymaxi , color_pixel_maxi ) ;
+    return resultat ;
+}
