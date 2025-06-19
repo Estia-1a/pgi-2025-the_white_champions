@@ -63,5 +63,14 @@ int main(int argc, char **argv) {
    if ( strncmp( configuration.command, "mirror_totale", 11 ) == 0 ) {
     mirror_totale(configuration.filenames[0]);
   }
+  if ( strncmp( configuration.command, "crop_image", 11 ) == 0 ) {
+    mirror_totale(configuration.filenames[0]);
+  }
+  if ( strncmp( configuration.command, "get_pixel", 11 ) == 0 ) {
+    mirror_totale(configuration.filenames[0]);
+  }
+  if ( strncmp( configuration.command, "desaturate_image", 11 ) == 0 ) {
+    mirror_totale(configuration.filenames[0]);
+  }
   return 0;
 }
