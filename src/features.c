@@ -190,6 +190,24 @@ char* min_pixel(char* source_path){
     return resultat ;
 }
 
+int main(int argc, char*argy[]){
+    if(argc != 7){
+        printf("Usage : %s<input_file> <outpu_file> <center_x> <center_y> <width>
+        <height>\n", argv[0]);
+        return 1;
+    }
+    const char *input_file = argv[1];
+    const char *output_file = argv[2];
+    int center_x = atoi(argv[3]);
+    int center_y = atoi(argv[4]);
+    int width = atoi(argv[5]);
+    int height = atoi(argv[6]);
+
+    crop_image(input_file, output_file, center_x, center_y, width, height);
+
+    return 0;
+}
+
 char* max_component(char *source_path,char color_pixel){
     unsigned char* data=NULL ;
     int largeur , hauteur , NC , X , Y ;
