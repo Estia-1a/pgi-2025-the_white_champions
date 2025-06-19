@@ -366,3 +366,49 @@ uint8_t max(uint8_t a, uint8_t b, uint8_t c);{
     return m;
 }
 
+void desaturate_image(Pixel* image_data, int width, int height){
+    for (int i = 0; i < width * height; i++){
+        uint8_t r = image_data[i].red;
+        uint8_t g = image_data[i].green;
+        uint8_t b = image_data[i].blue;
+
+        uint8_t min_val = min(r, g, b);
+        uint8_t max_val = max(r, g, b);
+
+        uint8_t new_val = (min_val + max_val) / 2;
+        
+        image_data[i]. red = new_val;
+        image_data[i]. green = new_val;
+        image_data[i]. blue = new_val;
+    }
+}
+
+desaturate_image(){
+    int width = 2;
+    int height = 2;
+
+    Pixel* my_image_pixels = (Pixel*)malloc(width * height * sizeof(Pixel));
+    if (my_image_pixels == NULL){
+        fprintf(stderr, "Erreur d'allocation mémoire.\n");
+        return 1;
+    }
+
+    my_image_pixels[0].red = 255;
+    my_image_pixels[0].green = 0;
+    my_image_pixels[0].blue = 0;
+
+    my_image_pixels[1].red = 0;
+    my_image_pixels[1].green = 255;
+    my_image_pixels[1].blue = 0;
+
+    my_image_pixels[2].red = 0;
+    my_image_pixels[2].green = 0;
+    my_image_pixels[2].blue = 255;
+
+    my_image_pixels[3].red = 255;
+    my_image_pixels[3].green = 255;
+    my_image_pixels[3].blue = 0;
+
+    printf("--- Après désaturation ---\n");
+    for
+}
