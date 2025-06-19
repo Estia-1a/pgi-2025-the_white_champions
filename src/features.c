@@ -200,5 +200,10 @@ int main(int argc, char*argy[]){
     const char *output_file = argv[2];
     int center_x = atoi(argv[3]);
     int center_y = atoi(argv[4]);
+    int width = atoi(argv[5]);
+    int height = atoi(argv[6]);
 
+    crop_image(input_file, output_file, center_x, center_y, width, height);
+
+    return 0;
 }
