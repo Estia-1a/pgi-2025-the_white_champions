@@ -238,7 +238,7 @@ char* max_component(char *source_path,char color_pixel){
                 color_pixel_maxi=color_pixel_val ;
                 Ymaxi=Y ;
                 Xmaxi=X ;
-            }
+            } 
         }
     }
 	
