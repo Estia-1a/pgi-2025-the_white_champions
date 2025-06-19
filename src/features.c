@@ -14,7 +14,6 @@ void helloWorld() {
     printf("Hello World !");
 }
 
-
 void dimension(char *source_path) {
     unsigned char *data;
     int width, height, channel_count;
@@ -144,6 +143,7 @@ void mirror_totale(char*filename, int x, int y, int z) {
         }
     }
     return image_out_bmp;
+}
 
 void color_blue (char *source_path) {
     unsigned char *data;
@@ -158,6 +158,7 @@ void color_blue (char *source_path) {
     write_image_data("image_bleu.bmp", data, width, height);
     printf("color_blue\n");
 }
+
 void color_gray (char *source_path) {
     unsigned char *data;
     int width, height, channel_count;
