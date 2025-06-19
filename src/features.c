@@ -466,3 +466,33 @@ char* min_component(char *source_path,char t ){
     sprintf(resultat , "min_component %c ( %d %d ) : %d \n" , t , Xmini , Ymini , color_pixel_mini ) ;
     return resultat ;
 }
+
+void stat_report(char *source_path){
+	
+    FILE *report = fopen("file.txt", "w");
+   
+    char* min_componentR=min_component(source_path,'R') ;
+    char* min_componentG=min_component(source_path,'G') ;
+    char* min_componentB=min_component(source_path,'B') ;
+    
+    char* max_componentR=max_component(source_path,'R');
+    char* max_componentG=max_component(source_path,'G');
+    char* max_componentB=max_component(source_path,'B');
+    
+    char* maxipixel=max_pixel(source_path);
+    char* minipixel=min_pixel(source_path);
+    
+
+	fprintf(report,"%s",min_componentR) ;
+    fprintf(report,"%s",min_componentG) ;
+    fprintf(report,"%s \n \n",min_componentB) ;
+    
+    fprintf(report,"%s",max_componentR) ;
+    fprintf(report,"%s",max_componentG) ;
+    fprintf(report,"%s \n \n",max_componentB) ;
+	
+    fprintf(report,"%s \n \n",minipixel);
+    fprintf(report,"%s",maxipixel);
+    
+    fclose(report);
+}
