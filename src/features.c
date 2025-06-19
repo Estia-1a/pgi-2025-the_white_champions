@@ -190,7 +190,7 @@ char* min_pixel(char* source_path){
     return resultat ;
 }
 
-int main(int argc, char*argy[]){
+int crop_image(int argc, char*argy[]){
     if(argc != 7){
         printf("Usage : %s<input_file> <outpu_file> <center_x> <center_y> <width>
         <height>\n", argv[0]);
