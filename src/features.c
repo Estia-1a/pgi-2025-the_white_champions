@@ -247,3 +247,23 @@ char* max_component(char *source_path,char color_pixel){
     sprintf( resultat , "max_component %c ( %d %d ) : %d \n" , color_pixel , Xmaxi , Ymaxi , color_pixel_maxi ) ;
     return resultat ;
 }
+
+typedef struct{
+    unsigned char R;
+    unsigned char G;
+    unsigned char B;
+} pixelRGB
+
+pixelRGB* get_pixel(unsigned char* data, unsigned int width, unsigned int height, unsigned int n, int x, int y){
+    if(x<0 || x>=width || y<0 ||y>=height) return NULL;
+    return (pixelRGB*)&data[(y*width + x) * n];
+}
+
+void print_pixel(char*filename, int x, int y){
+    unsigned char* data;
+    unsigned int width, height, n;
+    data = read_image_data(filename, &data, &width, height, n,, x, y);
+    if(pixel){
+        printf("%s, %d, %d\n", pixel->G, pixel->G, pixel->B);
+    }
+}
