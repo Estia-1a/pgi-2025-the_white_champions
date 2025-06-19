@@ -46,6 +46,8 @@ int main(int argc, char **argv) {
   if ( strncmp( configuration.command, "print_pixel", 11 ) == 0 ) {
     print_pixel(configuration.filenames[0]);
   }
+
+
   if ( strncmp( configuration.command, "rotate_cw", 11 ) == 0 ) {
     rotate_cw(configuration.filenames[0]);
   }
@@ -61,6 +63,8 @@ int main(int argc, char **argv) {
   if ( strncmp( configuration.command, "mirror_totale", 11 ) == 0 ) {
     mirror_totale(configuration.filenames[0]);
   }
+
+
   if ( strncmp( configuration.command, "crop_image", 11 ) == 0 ) {
     crop_image(configuration.filenames[0]);
   }
@@ -70,6 +74,8 @@ int main(int argc, char **argv) {
   if ( strncmp( configuration.command, "desaturate_image", 11 ) == 0 ) {
    desaturate_image(configuration.filenames[0]);  
   }
+
+  
   if ( strncmp( configuration.command, "max_pixel", 11 ) == 0 ) {
    max_pixel(configuration.filenames[0]);  
   }
