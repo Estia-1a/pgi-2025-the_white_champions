@@ -189,3 +189,16 @@ char* min_pixel(char* source_path){
     sprintf( resultat ,"min_pixel( %d %d ) : %d , %d , %d \n" , Xmini , Ymini , min_pixel->R , min_pixel->G , min_pixel->B ) ;
     return resultat ;
 }
+
+int main(int argc, char*argy[]){
+    if(argc != 7){
+        printf("Usage : %s<input_file> <outpu_file> <center_x> <center_y> <width>
+        <height>\n", argv[0]);
+        return 1;
+    }
+    const char *input_file = argv[1];
+    const char *output_file = argv[2];
+    int center_x = atoi(argv[3]);
+    int center_y = atoi(argv[4]);
+
+}
