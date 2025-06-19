@@ -66,8 +66,8 @@ int main(int argc, char **argv) {
   if ( strncmp( configuration.command, "crop_image", 11 ) == 0 ) {
     crop_image(configuration.filenames[0]);
   }
-  if ( strncmp( configuration.command, "get_pixel", 11 ) == 0 ) {
-    get_pixel(configuration.filenames[0]);
+  if ( strncmp( configuration.command, "print_pixel", 11 ) == 0 ) {
+    print_pixel(configuration.filenames[0]);
   }
   if ( strncmp( configuration.command, "desaturate_image", 11 ) == 0 ) {
     desaturate_image(configuration.filenames[0]);
