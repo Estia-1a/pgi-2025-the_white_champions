@@ -45,37 +45,46 @@ int main(int argc, char **argv) {
   }
   if ( strncmp( configuration.command, "print_pixel", 11 ) == 0 ) {
     print_pixel(configuration.filenames[0]);
-}
-
+  }
   if ( strncmp( configuration.command, "rotate_cw", 11 ) == 0 ) {
     rotate_cw(configuration.filenames[0]);
-}
-
-   if ( strncmp( configuration.command, "rotate_acw", 11 ) == 0 ) {
+  }
+  if ( strncmp( configuration.command, "rotate_acw", 11 ) == 0 ) {
     rotate_acw(configuration.filenames[0]);
-}
-
-   if ( strncmp( configuration.command, "mirror_horizontal", 11 ) == 0 ) {
+  }
+  if ( strncmp( configuration.command, "mirror_horizontal", 11 ) == 0 ) {
     mirror_horizontal(configuration.filenames[0]);
-}
-
-   if ( strncmp( configuration.command, "mirror_verticale", 11 ) == 0 ) {
+  }
+  if ( strncmp( configuration.command, "mirror_verticale", 11 ) == 0 ) {
     mirror_verticale(configuration.filenames[0]);
-}
-
-   if ( strncmp( configuration.command, "mirror_totale", 11 ) == 0 ) {
+  }
+  if ( strncmp( configuration.command, "mirror_totale", 11 ) == 0 ) {
     mirror_totale(configuration.filenames[0]);
   }
- if ( strncmp( configuration.command, "crop_image", 11 ) == 0 ) {
+  if ( strncmp( configuration.command, "crop_image", 11 ) == 0 ) {
     crop_image(configuration.filenames[0]);
-}
-
+  }
   if ( strncmp( configuration.command, "print_pixel", 11 ) == 0 ) {
     print_pixel(configuration.filenames[0]);
-}
-
+  }
   if ( strncmp( configuration.command, "desaturate_image", 11 ) == 0 ) {
    desaturate_image(configuration.filenames[0]);  
   }
+  if ( strncmp( configuration.command, "max_pixel", 11 ) == 0 ) {
+   max_pixel(configuration.filenames[0]);  
+  }
+  if ( strncmp( configuration.command, "min_pixel", 11 ) == 0 ) {
+   min_pixel(configuration.filenames[0]);  
+  }
+  if ( strncmp( configuration.command, "max_component", 11 ) == 0 ) {
+   max_component(configuration.filenames[0]);  
+  }
+  if ( strncmp( configuration.command, "min_component", 11 ) == 0 ) {
+   min_component(configuration.filenames[0]);  
+  }
+  if ( strncmp( configuration.command, "stat_report", 11 ) == 0 ) {
+   stat_report(configuration.filenames[0]);  
+  }
+
   return 0;
 }
