@@ -30,21 +30,19 @@ int main(int argc, char **argv) {
   if ( strncmp( configuration.command, "helloworld", 10 ) == 0 ) {
     /* helloworld() function is defined in feature.h and implemented in feature.c */
     helloWorld();
-}
+  }
   if ( strncmp( configuration.command, "dimension", 9 ) == 0 ) {
     dimension( configuration.filenames[0] );
-}
+  }
   if ( strncmp( configuration.command, "first_pixel", 11 ) == 0 ) {
     first_pixel(configuration.filenames[0]);
-}
-
+  }
   if ( strncmp( configuration.command, "tenth_pixel", 11 ) == 0 ) {
     tenth_pixel(configuration.filenames[0]);
-}
-
+  }
   if ( strncmp( configuration.command, "second_line", 11 ) == 0 ) {
     second_line(configuration.filenames[0]);
-}
+  }
   if ( strncmp( configuration.command, "print_pixel", 11 ) == 0 ) {
     print_pixel(configuration.filenames[0]);
   }
@@ -63,14 +61,14 @@ int main(int argc, char **argv) {
    if ( strncmp( configuration.command, "mirror_totale", 11 ) == 0 ) {
     mirror_totale(configuration.filenames[0]);
   }
-  if ( strncmp( configuration.command, "crop_image", 11 ) == 0 ) {
+ if ( strncmp( configuration.command, "crop_image", 11 ) == 0 ) {
     crop_image(configuration.filenames[0]);
   }
   if ( strncmp( configuration.command, "print_pixel", 11 ) == 0 ) {
     print_pixel(configuration.filenames[0]);
   }
   if ( strncmp( configuration.command, "desaturate_image", 11 ) == 0 ) {
-    desaturate_image(configuration.filenames[0]);
+   desaturate_image(configuration.filenames[0]);  
   }
   return 0;
 }

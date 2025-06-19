@@ -420,3 +420,49 @@ desaturate_image(){
 
     return 0;
 }
+
+char* min_component(char *source_path,char t ){
+    unsigned char* data=NULL;
+    int color_pixel_min;
+    int largeur , hauteur , NC , X , Y ;
+    int color_pixel_val=0 ;
+    int Ymini=0 ;
+    int Xmini=0 ;
+    
+    read_image_data( source_path , &data , &largeur , &hauteur , &NC ) ;
+    pixelRGB*first_pixel=get_pixel( data , largeur , hauteur , NC , 0 , 0 ) ;
+	
+    if (t=='B'){
+        color_pixel_mini=first_pixel->B ;
+    }
+    else if (t=='R'){
+        color_pixel_mini=first_pixel->R ;
+    }
+    else if (t=='G'){
+        color_pixel_mini=first_pixel->G ;
+    }
+    
+    for( Y=0 ; Y<hauteur ; Y++ ){
+        for( X=0 ; X<largeur ; X++ ){
+            pixelRGB*pixel=get_pixel(data , largeur , hauteur , NC , X , Y ) ;
+            if (t=='B'){
+                color_pixel_val=pixel->B ;
+            }
+            else if (t=='R'){
+                color_pixel_val=pixel->R ;
+            }
+            else if (t=='G'){
+                color_pixel_val=pixel->G ;
+            }
+            if(color_pixel_val<color_pixel_mini){
+                color_pixel_mini = color_pixel_val ;
+                Ymin=Y ;
+                Xmin=X ;
+            }
+        }
+    }
+    printf("min_component %c ( %d %d ) : %d \n" , t , Xmini , Ymini , color_pixel_mini) ;
+    char* resultat=malloc(100);
+    sprintf(resultat , "min_component %c ( %d %d ) : %d \n" , t , Xmini , Ymini , color_pixel_mini ) ;
+    return resultat ;
+}
