@@ -345,3 +345,24 @@ void print_pixel(char*filename, int x, int y){
         printf("%s, %d, %d\n", pixel->G, pixel->G, pixel->B);
     }
 }
+
+typdef struct {
+    uint8_t blue;
+    uint8_t green;
+    uint8_t red;
+} Pixel;
+
+uint8_t min(uint8_t a, uint8_t b, uint8_t c){
+    uint8_t m = a;
+    if (b < c) m = b;
+    if (c < m) m = c;
+    return m;
+}
+
+uint8_t max(uint8_t a, uint8_t b, uint8_t c);{
+    uint8_t m = a;
+    if (b > m) m = b;
+    if (c > m) m = c;
+    return m;
+}
+
