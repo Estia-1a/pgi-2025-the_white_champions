@@ -144,7 +144,7 @@ void mirror_totale(char*filename, int x, int y, int z) {
         }
     }
     return image_out_bmp;
-
+}
 void color_blue (char *source_path) {
     unsigned char *data;
     int width, height, channel_count;
