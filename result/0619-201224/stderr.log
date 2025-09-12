@@ -1,0 +1,552 @@
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:49:6: error: conflicting types for ‘print_pixel’; have ‘void(char *, int,  int)’
+   49 | void print_pixel(char *filename, int x, int y) {
+      |      ^~~~~~~~~~~
+In file included from /home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:3:
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.h:20:6: note: previous declaration of ‘print_pixel’ with type ‘void(char *)’
+   20 | void print_pixel(char *source_path);
+      |      ^~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c: In function ‘rotate_cw’:
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:56:32: error: ‘data’ undeclared (first use in this function)
+   56 |     read_image_data(filename, &data, &width, &height, &n);
+      |                                ^~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:56:32: note: each undeclared identifier is reported only once for each function it appears in
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:56:39: error: ‘width’ undeclared (first use in this function)
+   56 |     read_image_data(filename, &data, &width, &height, &n);
+      |                                       ^~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:56:47: error: ‘height’ undeclared (first use in this function)
+   56 |     read_image_data(filename, &data, &width, &height, &n);
+      |                                               ^~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:56:56: error: ‘n’ undeclared (first use in this function)
+   56 |     read_image_data(filename, &data, &width, &height, &n);
+      |                                                        ^
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:58:33: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+   58 |     unsigned char *rotate_pic = malloc(zPixel);
+      |                                 ^~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:5:1: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+    4 | #include "utils.h"
+  +++ |+#include <stdlib.h>
+    5 | 
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:58:33: warning: incompatible implicit declaration of built-in function ‘malloc’ [-Wbuiltin-declaration-mismatch]
+   58 |     unsigned char *rotate_pic = malloc(zPixel);
+      |                                 ^~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:58:33: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:65:17: error: ‘image_out_bmp’ undeclared (first use in this function)
+   65 |                 image_out_bmp[(x * height + (height - 1 - y)) * zPixel + z] = data[(y * width + x) * zPixel + z];
+      |                 ^~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:69:12: warning: ‘return’ with a value, in function returning void
+   69 |     return image_out_bmp;
+      |            ^~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:55:6: note: declared here
+   55 | void rotate_cw(char *filename, int x, int y, int z) {
+      |      ^~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c: In function ‘rotate_acw’:
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:73:32: error: ‘data’ undeclared (first use in this function)
+   73 |     read_image_data(filename, &data, &width, &height);
+      |                                ^~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:73:39: error: ‘width’ undeclared (first use in this function)
+   73 |     read_image_data(filename, &data, &width, &height);
+      |                                       ^~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:73:47: error: ‘height’ undeclared (first use in this function)
+   73 |     read_image_data(filename, &data, &width, &height);
+      |                                               ^~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:73:5: error: too few arguments to function ‘read_image_data’
+   73 |     read_image_data(filename, &data, &width, &height);
+      |     ^~~~~~~~~~~~~~~
+In file included from /home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:1:
+/home/runner/work/pgi-2025-the_white_champions/lib/estia_image/include/estia-image.h:13:5: note: declared here
+   13 | int read_image_data(const char *filename, unsigned char **data, int *width, int *height, int *channel_count);
+      |     ^~~~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:74:33: warning: incompatible implicit declaration of built-in function ‘malloc’ [-Wbuiltin-declaration-mismatch]
+   74 |     unsigned char *rotate_pic = malloc(zPixel);
+      |                                 ^~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:74:33: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:74:40: error: ‘zPixel’ undeclared (first use in this function)
+   74 |     unsigned char *rotate_pic = malloc(zPixel);
+      |                                        ^~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:81:17: error: ‘image_out_bmp’ undeclared (first use in this function)
+   81 |                 image_out_bmp[(y * width + (width - 1 - x)) * zPixel + z] = data[(y * width + x) * zPixel + z]; /*On change juste ici la valeur de roation soit x*/
+      |                 ^~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:85:12: warning: ‘return’ with a value, in function returning void
+   85 |     return image_out_bmp;
+      |            ^~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:72:6: note: declared here
+   72 | void rotate_acw(char*filename, int x, int y, int z) {
+      |      ^~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c: In function ‘mirror_horizontal’:
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:89:5: error: ‘image_out_bmp’ undeclared (first use in this function)
+   89 |     image_out_bmp = read_image_data(filename, &data, &width, &height);
+      |     ^~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:89:48: error: ‘data’ undeclared (first use in this function)
+   89 |     image_out_bmp = read_image_data(filename, &data, &width, &height);
+      |                                                ^~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:89:55: error: ‘width’ undeclared (first use in this function)
+   89 |     image_out_bmp = read_image_data(filename, &data, &width, &height);
+      |                                                       ^~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:89:63: error: ‘height’ undeclared (first use in this function)
+   89 |     image_out_bmp = read_image_data(filename, &data, &width, &height);
+      |                                                               ^~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:89:21: error: too few arguments to function ‘read_image_data’
+   89 |     image_out_bmp = read_image_data(filename, &data, &width, &height);
+      |                     ^~~~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/lib/estia_image/include/estia-image.h:13:5: note: declared here
+   13 | int read_image_data(const char *filename, unsigned char **data, int *width, int *height, int *channel_count);
+      |     ^~~~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:90:34: warning: incompatible implicit declaration of built-in function ‘malloc’ [-Wbuiltin-declaration-mismatch]
+   90 |     unsigned char *symetry_pic = malloc(zPixel);
+      |                                  ^~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:90:34: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:90:41: error: ‘zPixel’ undeclared (first use in this function)
+   90 |     unsigned char *symetry_pic = malloc(zPixel);
+      |                                         ^~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:98:29: error: expected expression before ‘<’ token
+   98 |             for( z = 0; z = < zPixel; z++) { /* Ici on échange les pixels de place*/
+      |                             ^
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:105:12: warning: ‘return’ with a value, in function returning void
+  105 |     return image_out_bmp ;
+      |            ^~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:88:6: note: declared here
+   88 | void mirror_horizontal(char*filename, int x, int y, int z) {
+      |      ^~~~~~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c: In function ‘mirror_verticale’:
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:109:5: error: ‘image_out_bmp’ undeclared (first use in this function)
+  109 |     image_out_bmp = read_image_data(filename, &data, &width, &height);
+      |     ^~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:109:48: error: ‘data’ undeclared (first use in this function)
+  109 |     image_out_bmp = read_image_data(filename, &data, &width, &height);
+      |                                                ^~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:109:55: error: ‘width’ undeclared (first use in this function)
+  109 |     image_out_bmp = read_image_data(filename, &data, &width, &height);
+      |                                                       ^~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:109:63: error: ‘height’ undeclared (first use in this function)
+  109 |     image_out_bmp = read_image_data(filename, &data, &width, &height);
+      |                                                               ^~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:109:21: error: too few arguments to function ‘read_image_data’
+  109 |     image_out_bmp = read_image_data(filename, &data, &width, &height);
+      |                     ^~~~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/lib/estia_image/include/estia-image.h:13:5: note: declared here
+   13 | int read_image_data(const char *filename, unsigned char **data, int *width, int *height, int *channel_count);
+      |     ^~~~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:110:34: warning: incompatible implicit declaration of built-in function ‘malloc’ [-Wbuiltin-declaration-mismatch]
+  110 |     unsigned char *symetry_pic = malloc(zPixel);
+      |                                  ^~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:110:34: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:110:41: error: ‘zPixel’ undeclared (first use in this function)
+  110 |     unsigned char *symetry_pic = malloc(zPixel);
+      |                                         ^~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:118:29: error: expected expression before ‘<’ token
+  118 |             for( z = 0; z = < zPixel; z++) { /* Ici meme idee que precedemment on realise juste pour le haut et la bas */
+      |                             ^
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:125:12: warning: ‘return’ with a value, in function returning void
+  125 |     return image_out_bmp;
+      |            ^~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:108:6: note: declared here
+  108 | void mirror_verticale(char*filename, int x, int y, int z) {
+      |      ^~~~~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c: In function ‘mirror_totale’:
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:129:5: error: ‘image_out_bmp’ undeclared (first use in this function)
+  129 |     image_out_bmp = read_image_data(filename, &data, &width, &height);
+      |     ^~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:129:48: error: ‘data’ undeclared (first use in this function)
+  129 |     image_out_bmp = read_image_data(filename, &data, &width, &height);
+      |                                                ^~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:129:55: error: ‘width’ undeclared (first use in this function)
+  129 |     image_out_bmp = read_image_data(filename, &data, &width, &height);
+      |                                                       ^~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:129:63: error: ‘height’ undeclared (first use in this function)
+  129 |     image_out_bmp = read_image_data(filename, &data, &width, &height);
+      |                                                               ^~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:129:21: error: too few arguments to function ‘read_image_data’
+  129 |     image_out_bmp = read_image_data(filename, &data, &width, &height);
+      |                     ^~~~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/lib/estia_image/include/estia-image.h:13:5: note: declared here
+   13 | int read_image_data(const char *filename, unsigned char **data, int *width, int *height, int *channel_count);
+      |     ^~~~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:130:34: warning: incompatible implicit declaration of built-in function ‘malloc’ [-Wbuiltin-declaration-mismatch]
+  130 |     unsigned char *symetry_pic = malloc(zPixel);
+      |                                  ^~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:130:34: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:130:41: error: ‘zPixel’ undeclared (first use in this function)
+  130 |     unsigned char *symetry_pic = malloc(zPixel);
+      |                                         ^~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:138:29: error: expected expression before ‘<’ token
+  138 |             for( z = 0; z = < zPixel; z++) { /* Ici meme idee que precedemment on realise juste pour toutes les directions */
+      |                             ^
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:145:12: warning: ‘return’ with a value, in function returning void
+  145 |     return image_out_bmp;
+      |            ^~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:128:6: note: declared here
+  128 | void mirror_totale(char*filename, int x, int y, int z) {
+      |      ^~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/main.c: In function ‘main’:
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/main.c:52:5: error: too few arguments to function ‘rotate_cw’
+   52 |     rotate_cw(configuration.filenames[0]);
+      |     ^~~~~~~~~
+In file included from /home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/main.c:8:
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.h:27:6: note: declared here
+   27 | void rotate_cw(char *filename, int x, int y, int z);
+      |      ^~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/main.c:55:5: error: too few arguments to function ‘rotate_acw’
+   55 |     rotate_acw(configuration.filenames[0]);
+      |     ^~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.h:26:6: note: declared here
+   26 | void rotate_acw(char*filename, int x, int y, int z);
+      |      ^~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/main.c:58:5: error: too few arguments to function ‘mirror_horizontal’
+   58 |     mirror_horizontal(configuration.filenames[0]);
+      |     ^~~~~~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.h:25:6: note: declared here
+   25 | void mirror_horizontal(char*filename, int x, int y, int z);
+      |      ^~~~~~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/main.c:61:5: error: too few arguments to function ‘mirror_verticale’
+   61 |     mirror_verticale(configuration.filenames[0]);
+      |     ^~~~~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.h:24:6: note: declared here
+   24 | void mirror_verticale(char*filename, int x, int y, int z);
+      |      ^~~~~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/main.c:64:5: error: too few arguments to function ‘mirror_totale’
+   64 |     mirror_totale(configuration.filenames[0]);
+      |     ^~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.h:23:6: note: declared here
+   23 | void mirror_totale(char*filename, int x, int y, int z);
+      |      ^~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/main.c:86:4: error: too few arguments to function ‘max_component’
+   86 |    max_component(configuration.filenames[0]);
+      |    ^~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.h:31:7: note: declared here
+   31 | char* max_component(char *source_path,char color_pixel);
+      |       ^~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/main.c:89:4: error: too few arguments to function ‘min_component’
+   89 |    min_component(configuration.filenames[0]);
+      |    ^~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.h:32:7: note: declared here
+   32 | char* min_component(char *source_path,char color_pixel);
+      |       ^~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c: In function ‘max_pixel’:
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:215:24: warning: implicit declaration of function ‘get_pixel’; did you mean ‘min_pixel’? [-Wimplicit-function-declaration]
+  215 |     pixelRGB*max_pixel=get_pixel( data , largeur , hauteur , NC , 0 , 0 ) ;
+      |                        ^~~~~~~~~
+      |                        min_pixel
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:215:24: warning: initialization of ‘pixelRGB *’ {aka ‘struct _pixelRGB *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:216:30: warning: initialization of ‘pixelRGB *’ {aka ‘struct _pixelRGB *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+  216 |         pixelRGB*first_pixel=get_pixel( data , largeur , hauteur , NC , 0 , 0 ) ;
+      |                              ^~~~~~~~~
+gmake[2]: *** [CMakeFiles/freud.dir/build.make:107: CMakeFiles/freud.dir/src/main.c.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:217:47: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘G’
+  217 |         int Solmaxi=first_pixel->R+first_pixel->G+first_pixel->B ;
+      |                                               ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:217:62: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘B’
+  217 |         int Solmaxi=first_pixel->R+first_pixel->G+first_pixel->B ;
+      |                                                              ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:222:28: warning: initialization of ‘pixelRGB *’ {aka ‘struct _pixelRGB *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+  222 |             pixelRGB*pixel=get_pixel( data , largeur , hauteur , NC , X , Y ) ;
+      |                            ^~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:223:31: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘G’
+  223 |             Sol=pixel->R+pixel->G+pixel->B ;
+      |                               ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:223:40: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘B’
+  223 |             Sol=pixel->R+pixel->G+pixel->B ;
+      |                                        ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:234:95: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘G’
+  234 |     printf( "max_pixel ( %d %d ) : %d , %d , %d \n" , Xmaxi , Ymaxi , max_pixel->R , max_pixel->G , max_pixel->B ) ;
+      |                                                                                               ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:234:110: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘B’
+  234 |     printf( "max_pixel ( %d %d ) : %d , %d , %d \n" , Xmaxi , Ymaxi , max_pixel->R , max_pixel->G , max_pixel->B ) ;
+      |                                                                                                              ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:235:20: warning: incompatible implicit declaration of built-in function ‘malloc’ [-Wbuiltin-declaration-mismatch]
+  235 |     char* resultat=malloc(100) ;
+      |                    ^~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:235:20: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:236:105: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘G’
+  236 |     sprintf(resultat , "max_pixel( %d %d ) : %d , %d , %d \n" , Xmaxi , Ymaxi , max_pixel->R , max_pixel->G , max_pixel->B ) ;
+      |                                                                                                         ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:236:120: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘B’
+  236 |     sprintf(resultat , "max_pixel( %d %d ) : %d , %d , %d \n" , Xmaxi , Ymaxi , max_pixel->R , max_pixel->G , max_pixel->B ) ;
+      |                                                                                                                        ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c: In function ‘min_pixel’:
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:248:24: warning: initialization of ‘pixelRGB *’ {aka ‘struct _pixelRGB *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+  248 |     pixelRGB*min_pixel=get_pixel( data , largeur , hauteur , NC , 0 , 0 ) ;
+      |                        ^~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:249:26: warning: initialization of ‘pixelRGB *’ {aka ‘struct _pixelRGB *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+  249 |     pixelRGB*first_pixel=get_pixel( data , largeur , hauteur , NC , 0 , 0 ) ;
+      |                          ^~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:250:43: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘G’
+  250 |     int Solmini=first_pixel->R+first_pixel->G+first_pixel->B ;
+      |                                           ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:250:58: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘B’
+  250 |     int Solmini=first_pixel->R+first_pixel->G+first_pixel->B ;
+      |                                                          ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:255:28: warning: initialization of ‘pixelRGB *’ {aka ‘struct _pixelRGB *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+  255 |             pixelRGB*pixel=get_pixel( data , largeur , hauteur , NC , X , Y ) ;
+      |                            ^~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:256:31: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘G’
+  256 |             Sol=pixel->R+pixel->G+pixel->B ;
+      |                               ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:256:40: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘B’
+  256 |             Sol=pixel->R+pixel->G+pixel->B ;
+      |                                        ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:266:93: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘G’
+  266 |     printf("min_pixel( %d %d ) : %d , %d , %d \n" , Xmini , Ymini , min_pixel->R , min_pixel->G , min_pixel->B ) ;
+      |                                                                                             ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:266:108: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘B’
+  266 |     printf("min_pixel( %d %d ) : %d , %d , %d \n" , Xmini , Ymini , min_pixel->R , min_pixel->G , min_pixel->B ) ;
+      |                                                                                                            ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:267:20: warning: incompatible implicit declaration of built-in function ‘malloc’ [-Wbuiltin-declaration-mismatch]
+  267 |     char* resultat=malloc(100) ;
+      |                    ^~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:267:20: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:268:105: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘G’
+  268 |     sprintf( resultat ,"min_pixel( %d %d ) : %d , %d , %d \n" , Xmini , Ymini , min_pixel->R , min_pixel->G , min_pixel->B ) ;
+      |                                                                                                         ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:268:120: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘B’
+  268 |     sprintf( resultat ,"min_pixel( %d %d ) : %d , %d , %d \n" , Xmini , Ymini , min_pixel->R , min_pixel->G , min_pixel->B ) ;
+      |                                                                                                                        ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c: At top level:
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:272:5: error: conflicting types for ‘crop_image’; have ‘int(int,  char **)’
+  272 | int crop_image(int argc, char*argy[]){
+      |     ^~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.h:19:6: note: previous declaration of ‘crop_image’ with type ‘void(char *)’
+   19 | void crop_image(char *source_path);
+      |      ^~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c: In function ‘crop_image’:
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:274:16: warning: missing terminating " character
+  274 |         printf("Usage : %s<input_file> <outpu_file> <center_x> <center_y> <width>
+      |                ^
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:274:16: error: missing terminating " character
+  274 |         printf("Usage : %s<input_file> <outpu_file> <center_x> <center_y> <width>
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:275:9: error: expected expression before ‘<’ token
+  275 |         <height>\n", argv[0]);
+      |         ^
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:275:17: error: stray ‘\’ in program
+  275 |         <height>\n", argv[0]);
+      |                 ^
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:275:19: warning: missing terminating " character
+  275 |         <height>\n", argv[0]);
+      |                   ^
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:275:19: error: missing terminating " character
+  275 |         <height>\n", argv[0]);
+      |                   ^~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:276:18: error: expected ‘;’ before ‘}’ token
+  276 |         return 1;
+      |                  ^
+      |                  ;
+  277 |     }
+      |     ~             
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:278:30: error: ‘argv’ undeclared (first use in this function); did you mean ‘argy’?
+  278 |     const char *input_file = argv[1];
+      |                              ^~~~
+      |                              argy
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:280:20: warning: implicit declaration of function ‘atoi’ [-Wimplicit-function-declaration]
+  280 |     int center_x = atoi(argv[3]);
+      |                    ^~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:285:16: warning: passing argument 1 of ‘crop_image’ makes integer from pointer without a cast [-Wint-conversion]
+  285 |     crop_image(input_file, output_file, center_x, center_y, width, height);
+      |                ^~~~~~~~~~
+      |                |
+      |                const char *
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:272:20: note: expected ‘int’ but argument is of type ‘const char *’
+  272 | int crop_image(int argc, char*argy[]){
+      |                ~~~~^~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:285:28: warning: passing argument 2 of ‘crop_image’ from incompatible pointer type [-Wincompatible-pointer-types]
+  285 |     crop_image(input_file, output_file, center_x, center_y, width, height);
+      |                            ^~~~~~~~~~~
+      |                            |
+      |                            const char *
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:272:31: note: expected ‘char **’ but argument is of type ‘const char *’
+  272 | int crop_image(int argc, char*argy[]){
+      |                          ~~~~~^~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:285:5: error: too many arguments to function ‘crop_image’
+  285 |     crop_image(input_file, output_file, center_x, center_y, width, height);
+      |     ^~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:272:5: note: declared here
+  272 | int crop_image(int argc, char*argy[]){
+      |     ^~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c: In function ‘max_component’:
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:303:28: warning: initialization of ‘pixelRGB *’ {aka ‘struct _pixelRGB *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+  303 |             pixelRGB*pixel=get_pixel( data, largeur , hauteur , NC , X , Y ) ;
+      |                            ^~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:305:38: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘B’
+  305 |                 color_pixel_val=pixel->B ;
+      |                                      ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:313:38: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘G’
+  313 |                 color_pixel_val=pixel->G ;
+      |                                      ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:325:20: warning: incompatible implicit declaration of built-in function ‘malloc’ [-Wbuiltin-declaration-mismatch]
+  325 |     char* resultat=malloc(100) ;
+      |                    ^~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:325:20: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c: At top level:
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:334:11: error: expected ‘;’ before ‘pixelRGB’
+  334 | } pixelRGB
+      |           ^
+      |           ;
+  335 | 
+  336 | pixelRGB* get_pixel(unsigned char* data, unsigned int width, unsigned int height, unsigned int n, int x, int y){
+      | ~~~~~~~~   
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:336:11: error: conflicting types for ‘get_pixel’; have ‘pixelRGB *(unsigned char *, unsigned int,  unsigned int,  unsigned int,  int,  int)’ {aka ‘struct _pixelRGB *(unsigned char *, unsigned int,  unsigned int,  unsigned int,  int,  int)’}
+  336 | pixelRGB* get_pixel(unsigned char* data, unsigned int width, unsigned int height, unsigned int n, int x, int y){
+      |           ^~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:215:24: note: previous implicit declaration of ‘get_pixel’ with type ‘int()’
+  215 |     pixelRGB*max_pixel=get_pixel( data , largeur , hauteur , NC , 0 , 0 ) ;
+      |                        ^~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:341:6: error: conflicting types for ‘print_pixel’; have ‘void(char *, int,  int)’
+  341 | void print_pixel(char*filename, int x, int y){
+      |      ^~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.h:20:6: note: previous declaration of ‘print_pixel’ with type ‘void(char *)’
+   20 | void print_pixel(char *source_path);
+      |      ^~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c: In function ‘print_pixel’:
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:344:63: error: expected expression before ‘,’ token
+  344 |     data = read_image_data(filename, &data, &width, height, n,, x, y);
+      |                                                               ^
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:344:53: warning: passing argument 4 of ‘read_image_data’ makes pointer from integer without a cast [-Wint-conversion]
+  344 |     data = read_image_data(filename, &data, &width, height, n,, x, y);
+      |                                                     ^~~~~~
+      |                                                     |
+      |                                                     unsigned int
+/home/runner/work/pgi-2025-the_white_champions/lib/estia_image/include/estia-image.h:13:82: note: expected ‘int *’ but argument is of type ‘unsigned int’
+   13 | int read_image_data(const char *filename, unsigned char **data, int *width, int *height, int *channel_count);
+      |                                                                             ~~~~~^~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:344:61: warning: passing argument 5 of ‘read_image_data’ makes pointer from integer without a cast [-Wint-conversion]
+  344 |     data = read_image_data(filename, &data, &width, height, n,, x, y);
+      |                                                             ^
+      |                                                             |
+      |                                                             unsigned int
+/home/runner/work/pgi-2025-the_white_champions/lib/estia_image/include/estia-image.h:13:95: note: expected ‘int *’ but argument is of type ‘unsigned int’
+   13 | int read_image_data(const char *filename, unsigned char **data, int *width, int *height, int *channel_count);
+      |                                                                                          ~~~~~^~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:344:12: error: too many arguments to function ‘read_image_data’
+  344 |     data = read_image_data(filename, &data, &width, height, n,, x, y);
+      |            ^~~~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/lib/estia_image/include/estia-image.h:13:5: note: declared here
+   13 | int read_image_data(const char *filename, unsigned char **data, int *width, int *height, int *channel_count);
+      |     ^~~~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:344:10: warning: assignment to ‘unsigned char *’ from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+  344 |     data = read_image_data(filename, &data, &width, height, n,, x, y);
+      |          ^
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:345:8: error: ‘pixel’ undeclared (first use in this function); did you mean ‘pixelRGB’?
+  345 |     if(pixel){
+      |        ^~~~~
+      |        pixelRGB
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c: At top level:
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:350:7: error: expected ‘;’ before ‘struct’
+  350 | typdef struct {
+      |       ^~~~~~~
+      |       ;
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:351:5: error: unknown type name ‘uint8_t’
+  351 |     uint8_t blue;
+      |     ^~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:352:5: error: unknown type name ‘uint8_t’
+  352 |     uint8_t green;
+      |     ^~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:353:5: error: unknown type name ‘uint8_t’
+  353 |     uint8_t red;
+      |     ^~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:356:1: error: unknown type name ‘uint8_t’
+  356 | uint8_t min(uint8_t a, uint8_t b, uint8_t c){
+      | ^~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:5:1: note: ‘uint8_t’ is defined in header ‘<stdint.h>’; did you forget to ‘#include <stdint.h>’?
+    4 | #include "utils.h"
+  +++ |+#include <stdint.h>
+    5 | 
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:356:13: error: unknown type name ‘uint8_t’
+  356 | uint8_t min(uint8_t a, uint8_t b, uint8_t c){
+      |             ^~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:356:13: note: ‘uint8_t’ is defined in header ‘<stdint.h>’; did you forget to ‘#include <stdint.h>’?
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:356:24: error: unknown type name ‘uint8_t’
+  356 | uint8_t min(uint8_t a, uint8_t b, uint8_t c){
+      |                        ^~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:356:24: note: ‘uint8_t’ is defined in header ‘<stdint.h>’; did you forget to ‘#include <stdint.h>’?
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:356:35: error: unknown type name ‘uint8_t’
+  356 | uint8_t min(uint8_t a, uint8_t b, uint8_t c){
+      |                                   ^~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:356:35: note: ‘uint8_t’ is defined in header ‘<stdint.h>’; did you forget to ‘#include <stdint.h>’?
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:363:1: error: unknown type name ‘uint8_t’
+  363 | uint8_t max(uint8_t a, uint8_t b, uint8_t c);{
+      | ^~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:363:1: note: ‘uint8_t’ is defined in header ‘<stdint.h>’; did you forget to ‘#include <stdint.h>’?
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:363:13: error: unknown type name ‘uint8_t’
+  363 | uint8_t max(uint8_t a, uint8_t b, uint8_t c);{
+      |             ^~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:363:13: note: ‘uint8_t’ is defined in header ‘<stdint.h>’; did you forget to ‘#include <stdint.h>’?
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:363:24: error: unknown type name ‘uint8_t’
+  363 | uint8_t max(uint8_t a, uint8_t b, uint8_t c);{
+      |                        ^~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:363:24: note: ‘uint8_t’ is defined in header ‘<stdint.h>’; did you forget to ‘#include <stdint.h>’?
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:363:35: error: unknown type name ‘uint8_t’
+  363 | uint8_t max(uint8_t a, uint8_t b, uint8_t c);{
+      |                                   ^~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:363:35: note: ‘uint8_t’ is defined in header ‘<stdint.h>’; did you forget to ‘#include <stdint.h>’?
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:363:46: error: expected identifier or ‘(’ before ‘{’ token
+  363 | uint8_t max(uint8_t a, uint8_t b, uint8_t c);{
+      |                                              ^
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:370:23: error: expected declaration specifiers or ‘...’ before ‘Pixel’
+  370 | void desaturate_image(Pixel* image_data, int width, int height){
+      |                       ^~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:387:1: warning: return type defaults to ‘int’ [-Wimplicit-int]
+  387 | desaturate_image(){
+      | ^~~~~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:387:1: warning: conflicting types for ‘desaturate_image’
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.h:21:6: note: previous declaration of ‘desaturate_image’ with type ‘void(char *)’
+   21 | void desaturate_image(char *source_path);
+      |      ^~~~~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c: In function ‘desaturate_image’:
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:391:12: error: ‘my_image_pixels’ undeclared (first use in this function)
+  391 |     Pixel* my_image_pixels = (Pixel*)malloc(width * height * sizeof(Pixel));
+      |            ^~~~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:391:37: error: expected expression before ‘)’ token
+  391 |     Pixel* my_image_pixels = (Pixel*)malloc(width * height * sizeof(Pixel));
+      |                                     ^
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:394:16: warning: ‘return’ with a value, in function returning void
+  394 |         return 1;
+      |                ^
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:387:1: note: declared here
+  387 | desaturate_image(){
+      | ^~~~~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:419:5: warning: implicit declaration of function ‘free’ [-Wimplicit-function-declaration]
+  419 |     free(my_image_pixels);
+      |     ^~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:419:5: note: include ‘<stdlib.h>’ or provide a declaration of ‘free’
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:419:5: warning: incompatible implicit declaration of built-in function ‘free’ [-Wbuiltin-declaration-mismatch]
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:419:5: note: include ‘<stdlib.h>’ or provide a declaration of ‘free’
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:422:12: warning: ‘return’ with a value, in function returning void
+  422 |     return 0;
+      |            ^
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:387:1: note: declared here
+  387 | desaturate_image(){
+      | ^~~~~~~~~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c: In function ‘min_component’:
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:437:9: error: ‘color_pixel_mini’ undeclared (first use in this function); did you mean ‘color_pixel_min’?
+  437 |         color_pixel_mini=first_pixel->B ;
+      |         ^~~~~~~~~~~~~~~~
+      |         color_pixel_min
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:437:37: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘B’
+  437 |         color_pixel_mini=first_pixel->B ;
+      |                                     ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:443:37: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘G’
+  443 |         color_pixel_mini=first_pixel->G ;
+      |                                     ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:450:38: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘B’
+  450 |                 color_pixel_val=pixel->B ;
+      |                                      ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:456:38: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘G’
+  456 |                 color_pixel_val=pixel->G ;
+      |                                      ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:460:17: error: ‘Ymin’ undeclared (first use in this function); did you mean ‘Ymini’?
+  460 |                 Ymin=Y ;
+      |                 ^~~~
+      |                 Ymini
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:461:17: error: ‘Xmin’ undeclared (first use in this function); did you mean ‘Xmini’?
+  461 |                 Xmin=X ;
+      |                 ^~~~
+      |                 Xmini
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:466:20: warning: incompatible implicit declaration of built-in function ‘malloc’ [-Wbuiltin-declaration-mismatch]
+  466 |     char* resultat=malloc(100);
+      |                    ^~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:466:20: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+gmake[2]: *** [CMakeFiles/freud.dir/build.make:93: CMakeFiles/freud.dir/src/features.c.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:87: CMakeFiles/freud.dir/all] Error 2
+gmake: *** [Makefile:136: all] Error 2
+
+The process '/usr/local/bin/cmake' failed with exit code 2
