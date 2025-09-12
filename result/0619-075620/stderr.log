@@ -1,0 +1,91 @@
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c: In function ‘max_pixel’:
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:136:24: warning: implicit declaration of function ‘get_pixel’; did you mean ‘max_pixel’? [-Wimplicit-function-declaration]
+  136 |     pixelRGB*max_pixel=get_pixel( data , largeur , hauteur , NC , 0 , 0 ) ;
+      |                        ^~~~~~~~~
+      |                        max_pixel
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:136:24: warning: initialization of ‘pixelRGB *’ {aka ‘struct _pixelRGB *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:137:30: warning: initialization of ‘pixelRGB *’ {aka ‘struct _pixelRGB *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+  137 |         pixelRGB*first_pixel=get_pixel( data , largeur , hauteur , NC , 0 , 0 ) ;
+      |                              ^~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:138:47: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘G’
+  138 |         int Solmaxi=first_pixel->R+first_pixel->G+first_pixel->B ;
+      |                                               ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:138:62: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘B’
+  138 |         int Solmaxi=first_pixel->R+first_pixel->G+first_pixel->B ;
+      |                                                              ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:143:28: warning: initialization of ‘pixelRGB *’ {aka ‘struct _pixelRGB *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+  143 |             pixelRGB*pixel=get_pixel( data , largeur , hauteur , NC , X , Y ) ;
+      |                            ^~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:144:31: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘G’
+  144 |             Sol=pixel->R+pixel->G+pixel->B ;
+      |                               ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:144:40: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘B’
+  144 |             Sol=pixel->R+pixel->G+pixel->B ;
+      |                                        ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:155:95: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘G’
+  155 |     printf( "max_pixel ( %d %d ) : %d , %d , %d \n" , Xmaxi , Ymaxi , max_pixel->R , max_pixel->G , max_pixel->B ) ;
+      |                                                                                               ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:155:110: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘B’
+  155 |     printf( "max_pixel ( %d %d ) : %d , %d , %d \n" , Xmaxi , Ymaxi , max_pixel->R , max_pixel->G , max_pixel->B ) ;
+      |                                                                                                              ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:156:20: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+  156 |     char* resultat=malloc(100) ;
+      |                    ^~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:5:1: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+    4 | #include "utils.h"
+  +++ |+#include <stdlib.h>
+    5 | 
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:156:20: warning: incompatible implicit declaration of built-in function ‘malloc’ [-Wbuiltin-declaration-mismatch]
+  156 |     char* resultat=malloc(100) ;
+      |                    ^~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:156:20: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:157:105: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘G’
+  157 |     sprintf(resultat , "max_pixel( %d %d ) : %d , %d , %d \n" , Xmaxi , Ymaxi , max_pixel->R , max_pixel->G , max_pixel->B ) ;
+      |                                                                                                         ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:157:120: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘B’
+  157 |     sprintf(resultat , "max_pixel( %d %d ) : %d , %d , %d \n" , Xmaxi , Ymaxi , max_pixel->R , max_pixel->G , max_pixel->B ) ;
+      |                                                                                                                        ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c: In function ‘min_pixel’:
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:169:24: warning: initialization of ‘pixelRGB *’ {aka ‘struct _pixelRGB *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+  169 |     pixelRGB*min_pixel=get_pixel( data , largeur , hauteur , NC , 0 , 0 ) ;
+      |                        ^~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:170:26: warning: initialization of ‘pixelRGB *’ {aka ‘struct _pixelRGB *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+  170 |     pixelRGB*first_pixel=get_pixel( data , largeur , hauteur , NC , 0 , 0 ) ;
+      |                          ^~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:171:43: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘G’
+  171 |     int Solmini=first_pixel->R+first_pixel->G+first_pixel->B ;
+      |                                           ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:171:58: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘B’
+  171 |     int Solmini=first_pixel->R+first_pixel->G+first_pixel->B ;
+      |                                                          ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:176:28: warning: initialization of ‘pixelRGB *’ {aka ‘struct _pixelRGB *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+  176 |             pixelRGB*pixel=get_pixel( data , largeur , hauteur , NC , X , Y ) ;
+      |                            ^~~~~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:177:31: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘G’
+  177 |             Sol=pixel->R+pixel->G+pixel->B ;
+      |                               ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:177:40: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘B’
+  177 |             Sol=pixel->R+pixel->G+pixel->B ;
+      |                                        ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:187:93: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘G’
+  187 |     printf("min_pixel( %d %d ) : %d , %d , %d \n" , Xmini , Ymini , min_pixel->R , min_pixel->G , min_pixel->B ) ;
+      |                                                                                             ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:187:108: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘B’
+  187 |     printf("min_pixel( %d %d ) : %d , %d , %d \n" , Xmini , Ymini , min_pixel->R , min_pixel->G , min_pixel->B ) ;
+      |                                                                                                            ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:188:20: warning: incompatible implicit declaration of built-in function ‘malloc’ [-Wbuiltin-declaration-mismatch]
+  188 |     char* resultat=malloc(100) ;
+      |                    ^~~~~~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:188:20: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:189:105: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘G’
+  189 |     sprintf( resultat ,"min_pixel( %d %d ) : %d , %d , %d \n" , Xmini , Ymini , min_pixel->R , min_pixel->G , min_pixel->B ) ;
+      |                                                                                                         ^~
+/home/runner/work/pgi-2025-the_white_champions/pgi-2025-the_white_champions/src/features.c:189:120: error: ‘pixelRGB’ {aka ‘struct _pixelRGB’} has no member named ‘B’
+  189 |     sprintf( resultat ,"min_pixel( %d %d ) : %d , %d , %d \n" , Xmini , Ymini , min_pixel->R , min_pixel->G , min_pixel->B ) ;
+      |                                                                                                                        ^~
+gmake[2]: *** [CMakeFiles/freud.dir/build.make:93: CMakeFiles/freud.dir/src/features.c.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[1]: *** [CMakeFiles/Makefile2:87: CMakeFiles/freud.dir/all] Error 2
+gmake: *** [Makefile:136: all] Error 2
+
+The process '/usr/local/bin/cmake' failed with exit code 2
